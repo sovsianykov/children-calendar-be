@@ -1,0 +1,19 @@
+# render.yaml
+services:
+  - type: web
+    runtime: node
+    name: children-calenar-be
+    plan: free       # or starter, standard, etc.
+    region: oregon   # change to your preferred region
+    branch: main
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:prod
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "10000"   # Render will override, optional
+      # Add your custom environment variables here
+      # - key: DATABASE_URL
+      #   value: your-database-url
+    autoDeploy: true
