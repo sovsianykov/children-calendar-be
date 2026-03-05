@@ -29,3 +29,27 @@ model CalendarEvent {
 
   @@map("calendar_events")
 }
+
+enum LessonColor {
+  kid_blue    @map("kid-blue")
+  kid_green   @map("kid-green")
+  kid_pink    @map("kid-pink")
+  kid_red     @map("kid-red")
+  kid_orange  @map("kid-orange")
+  kid_purple  @map("kid-purple")
+  kid_yellow  @map("kid-yellow")
+}
+
+model Lesson {
+  id        String      @id @default(uuid())
+  subject   String
+  day       Int         // 0=Mon, 1=Tue, 2=Wed, 3=Thu, 4=Fri
+  period    Int         // 1-based
+  room      String?
+  teacher   String?
+  color     LessonColor
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  @@map("lessons")
+}

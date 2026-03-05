@@ -11,7 +11,8 @@
       "Bash(brew services start postgresql 2>&1 || brew services start postgresql@14 2>&1 || brew services start postgresql@15 2>&1 || brew services start postgresql@16 2>&1)",
       "Bash(createdb kids_calendar 2>&1)",
       "Bash(psql -d kids_calendar -c \"SELECT 1\" 2>&1)",
-      "Bash(npx prisma migrate dev --name init 2>&1)"
+      "Bash(npx prisma migrate dev --name init 2>&1)",
+      "Bash(npx prisma migrate dev --name add_lessons 2>&1)"
     ]
   }
 }
