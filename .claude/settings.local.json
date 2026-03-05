@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx @nestjs/cli new . --package-manager npm --skip-git --language ts 2>&1 | tail -5)",
+      "Bash(npx prisma init 2>&1)",
+      "Bash(npm install @nestjs/mapped-types 2>&1 | tail -3)",
+      "Bash(npm install @nestjs/mapped-types --legacy-peer-deps 2>&1 | tail -3)",
+      "Bash(npx prisma generate 2>&1)",
+      "Bash(npx nest build 2>&1)",
+      "Bash(node -e \"const { PrismaClient } = require\\('@prisma/client'\\); console.log\\(typeof PrismaClient\\)\" 2>&1)",
+      "Bash(brew services start postgresql 2>&1 || brew services start postgresql@14 2>&1 || brew services start postgresql@15 2>&1 || brew services start postgresql@16 2>&1)",
+      "Bash(createdb kids_calendar 2>&1)",
+      "Bash(psql -d kids_calendar -c \"SELECT 1\" 2>&1)",
+      "Bash(npx prisma migrate dev --name init 2>&1)"
+    ]
+  }
+}
